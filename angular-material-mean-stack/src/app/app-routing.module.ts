@@ -17,10 +17,10 @@ import { AddHeroComponent } from './components/add-hero/add-hero.component';
 import { EditHeroComponent } from './components/edit-hero/edit-hero.component';
 import { HeroesListComponent } from './components/heroes-list/heroes-list.component';
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'add-student' },
-  { path: 'add-student', component: AddHeroComponent },
-  { path: 'edit-student/:id', component: EditHeroComponent },
-  { path: 'students-list', component: HeroesListComponent }
+  { path: '', pathMatch: 'full', redirectTo: 'add-hero' },
+  { path: 'add-hero', component: AddHeroComponent },
+  { path: 'edit-hero/:id', component: EditHeroComponent },
+  { path: 'heroes-list', component: HeroesListComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

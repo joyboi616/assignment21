@@ -1,1 +1,127 @@
-<p>add-hero works!</p>
+<!-- Title group  -->
+<div class="title-group">
+  <h1 class="mat-h1">Add Hero</h1>
+  <mat-divider fxFlex="1 0"></mat-divider>
+</div>
+<!-- Form -->
+<div class="inner-wrapper">
+  <form
+    [formGroup]="heroForm"
+    (ngSubmit)="submitHeroForm()"
+    #resetHeroForm="ngForm"
+    novalidate
+  >
+    <!-- Left block -->
+    <mat-card>
+      <div class="controlers-wrapper">
+        <!-- Hero name -->
+        <mat-form-field class="example-full-width">
+          <input
+            matInput
+            placeholder="Hero name"
+            formControlName="hero_name"
+          />
+          <mat-error *ngIf="handleError('hero_name', 'required')">
+            You must provide a <strong>hero name</strong>
+          </mat-error>
+        </mat-form-field>
+        <!-- Hero Alias -->
+        <mat-form-field class="example-full-width">
+          <input
+            matInput
+            placeholder="Hero Alias"
+            formControlName="hero_alias"
+          />
+          <mat-error *ngIf="handleError('hero_alias', 'required')">
+            You must provide a <strong>hero Alias</strong>
+          </mat-error>
+        </mat-form-field>
+        <!-- Hero Enemy -->
+        <mat-form-field>
+          <mat-label>Hero Enemy</mat-label>
+          <mat-select formControlName="hero_enemy">
+            <mat-option
+              [value]="sectioinArray"
+              *ngFor="let sectioinArray of SectioinArray"
+              >{{ sectioinArray }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="handleError('hero_enemy', 'required')">
+            Hero Enemy is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </mat-card>
+    <!-- Right block -->
+    <mat-card>
+      <div class="controlers-wrapper">
+        <!-- Add hero romantic interests -->
+        <mat-form-field class="multiple-items">
+          <mat-chip-list #chipList>
+            <mat-chip
+              *ngFor="let heroRomanticInterestArray of heroRomanticInterestArray"
+              [selectable]="selectable"
+              [removable]="removable"
+              (removed)="remove(heroRomanticInterestArray)"
+            >
+              {{ heroRomanticInterestArray.name }}
+              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+            <input
+              placeholder="Add Romantic Interest"
+              [matChipInputFor]="chipList"
+              [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+              [matChipInputAddOnBlur]="addOnBlur"
+              (matChipInputTokenEnd)="add($event)"
+            />
+          </mat-chip-list>
+          <i
+            class="material-icons tooltip-info"
+            matTooltip="Enter Romantic Interest name and press enter to add Romantic Interests"
+          >
+            info
+          </i>
+        </mat-form-field>
+        <!-- Date of Creation -->
+        <mat-form-field>
+          <input
+            matInput
+            readonly
+            [matDatepicker]="picker"
+            placeholder="Date of birth"
+            formControlName="creation_date"
+            (dateChange)="formatDate($event)"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="handleError('creation_date', 'required')">
+            Date of Creation is required
+          </mat-error>
+        </mat-form-field>
+        <!-- Gender -->
+        <div class="misc-bottom-padding">
+          <mat-label>Gender:</mat-label>
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="gender"
+          >
+            <mat-radio-button value="Male">Male</mat-radio-button>
+            <mat-radio-button value="Female">Female</mat-radio-button>
+            <mat-radio-button value="Other">Other</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+    </mat-card>
+    <!-- Submit & Reset -->
+    <mat-card>
+      <div class="full-wrapper button-wrapper">
+        <div class="button-wrapper">
+          <button mat-flat-button color="warn">Submit</button>
+        </div>
+      </div>
+    </mat-card>
+  </form>
+</div>
