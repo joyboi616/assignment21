@@ -166,12 +166,13 @@
   a,
   a:visited,
   a:hover {
-    color: #1976d2;
+    color: lightgrey;
     text-decoration: none;
   }
-
-  a:hover {
-    color: #125699;
+  
+  a:hover,
+  a:focus {
+    color: #4b9fe5;
   }
 
   .terminal {
@@ -300,7 +301,7 @@
       visibility: hidden;
     }
   }
-</style> -->
+</style>
 
 <!-- Toolbar -->
 <!-- <div class="toolbar" role="banner">
@@ -481,19 +482,22 @@
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<router-outlet></router-outlet>
+
 
 <!-- Toolbar -->
 <mat-toolbar color="primary" class="header">
-  <div>Hero Records</div>
+  <!-- class="header" -->
+  <div>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤHero Records</div>
   <span class="nav-tool-items">
     <mat-icon (click)="sidenav.toggle()" class="hamburger">menu</mat-icon>
   </span>
 </mat-toolbar>
 <mat-sidenav-container>
   <!-- Sidenav -->
-  <mat-sidenav #sidenav [mode]="isBiggerScreen() ? 'over' : 'side'" [(opened)]="opened" [fixedInViewport]="true"
-    [fixedTopGap]>
+  <mat-sidenav class="List" #sidenav [mode]="isBiggerScreen() ? 'over' : 'side'" [(opened)]="opened" [fixedInViewport]="true"
+    [fixedTopGap]="true">
+    <br>
+    <br>
     <mat-nav-list>
       <a mat-list-item routerLinkActive="active" routerLink="/add-hero">
         <mat-icon>add</mat-icon> Add Hero
@@ -504,7 +508,7 @@
     </mat-nav-list>
   </mat-sidenav>
   <!-- Main content -->
-  <mat-sidenav-content>
+  <mat-sidenav-content class="">
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -21,6 +21,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 export class AppComponent {
   opened = true;
   @ViewChild('sidenav') sidenav: MatSidenav;
+  title: any;
   ngOnInit() {
     console.log(window.innerWidth)
     if (window.innerWidth < 768) {

@@ -39,7 +39,7 @@ export class AddHeroComponent implements OnInit {
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
   heroForm: FormGroup;
   heroRomanticInterestArray: HeroRomanticInterest[] = [];
-  SectioinArray: any = ['A', 'B', 'C', 'D', 'E'];
+  SectioinArray: any = ['Avengers', 'Fantastic Four', 'Justice League', 'Titans', 'X-Men'];
   ngOnInit() {
     this.submitInfoForm();
   }
