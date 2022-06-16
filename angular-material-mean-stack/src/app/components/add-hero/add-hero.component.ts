@@ -63,8 +63,8 @@ export class AddHeroComponent implements OnInit {
       hero_alias: ['', [Validators.required]],
       hero_group: ['', [Validators.required]],
       hero_romantic_interest: [this.heroRomanticInterestArray],
-      gender: ['Male'],
       creation_date: ['', [Validators.required]],
+      gender: ['Male'],
     });
   }
   /* Add dynamic languages */

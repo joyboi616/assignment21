@@ -60,8 +60,8 @@ export class EditHeroComponent implements OnInit {
         hero_alias: [data.hero_alias, [Validators.required]],
         hero_group: [data.hero_group, [Validators.required]],
         hero_romantic_interest: [data.hero_romantic_interest],
-        gender: [data.gender],
         creation_date: [data.creation_date, [Validators.required]],
+        gender: [data.gender],
       });
     });
   }
@@ -72,8 +72,8 @@ export class EditHeroComponent implements OnInit {
       hero_alias: ['', [Validators.required]],
       hero_group: ['', [Validators.required]],
       hero_romantic_interest: [this.heroRomanticInterestArray],
-      gender: ['Male'],
       creation_date: ['', [Validators.required]],
+      gender: ['Male'],
     });
   }
   /* Add dynamic languages */
