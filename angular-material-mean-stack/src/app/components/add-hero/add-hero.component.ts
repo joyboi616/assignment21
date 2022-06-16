@@ -61,7 +61,7 @@ export class AddHeroComponent implements OnInit {
     this.heroForm = this.fb.group({
       hero_name: ['', [Validators.required]],
       hero_alias: ['', [Validators.required]],
-      hero_enemy: ['', [Validators.required]],
+      hero_group: ['', [Validators.required]],
       hero_romantic_interest: [this.heroRomanticInterestArray],
       gender: ['Male'],
       creation_date: ['', [Validators.required]],

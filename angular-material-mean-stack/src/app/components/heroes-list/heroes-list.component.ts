@@ -34,7 +34,7 @@ export class HeroesListComponent implements OnInit {
     '_id',
     'hero_name',
     'hero_alias',
-    'hero_enemy',
+    'hero_group',
     'action',
   ];
   constructor(private heroApi: ApiService) {

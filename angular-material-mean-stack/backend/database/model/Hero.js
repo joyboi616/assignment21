@@ -8,7 +8,7 @@ let Hero = new Schema({
   hero_alias: {
     type: String
   },
-  hero_enemy: {
+  hero_group: {
     type: String
   },
   hero_romantic_interest: {

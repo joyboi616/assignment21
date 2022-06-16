@@ -36,18 +36,18 @@
             You must provide a <strong>hero Alias</strong>
           </mat-error>
         </mat-form-field>
-        <!-- Hero Enemy -->
+        <!-- Hero Group -->
         <mat-form-field>
-          <mat-label>Hero Enemy</mat-label>
-          <mat-select formControlName="hero_enemy">
+          <mat-label>Hero Group</mat-label>
+          <mat-select formControlName="hero_group">
             <mat-option
               [value]="sectioinArray"
               *ngFor="let sectioinArray of SectioinArray"
               >{{ sectioinArray }}
             </mat-option>
           </mat-select>
-          <mat-error *ngIf="handleError('hero_enemy', 'required')">
-            Hero Enemy is required
+          <mat-error *ngIf="handleError('hero_group', 'required')">
+            Hero Group is required
           </mat-error>
         </mat-form-field>
       </div>

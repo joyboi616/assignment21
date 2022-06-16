@@ -58,7 +58,7 @@ export class EditHeroComponent implements OnInit {
       this.heroForm = this.fb.group({
         hero_name: [data.hero_name, [Validators.required]],
         hero_alias: [data.hero_alias, [Validators.required]],
-        hero_enemy: [data.hero_enemy, [Validators.required]],
+        hero_group: [data.hero_group, [Validators.required]],
         hero_romantic_interest: [data.hero_romantic_interest],
         gender: [data.gender],
         creation_date: [data.creation_date, [Validators.required]],
@@ -70,7 +70,7 @@ export class EditHeroComponent implements OnInit {
     this.heroForm = this.fb.group({
       hero_name: ['', [Validators.required]],
       hero_alias: ['', [Validators.required]],
-      hero_enemy: ['', [Validators.required]],
+      hero_group: ['', [Validators.required]],
       hero_romantic_interest: [this.heroRomanticInterestArray],
       gender: ['Male'],
       creation_date: ['', [Validators.required]],
