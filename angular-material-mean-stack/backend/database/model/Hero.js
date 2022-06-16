@@ -21,6 +21,6 @@ let Hero = new Schema({
     type: Date
   }
 }, {
-  collection: 'SuperheroesInfo'
+  collection: 'SuperheroesWikia2'
 })
 module.exports = mongoose.model('Hero', Hero)

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Steban Pulido - #200455316npm install --save express mongoose cors body-parser",
+  "author": "Steban Pulido - #200455316",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.0",
